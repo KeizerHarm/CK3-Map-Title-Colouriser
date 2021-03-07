@@ -46,6 +46,10 @@ namespace MapColourGenerator.Domain
             {
                 return Tier.County;
             }
+            if (name.StartsWith("b_"))
+            {
+                return Tier.Barony;
+            }
             throw new ArgumentException();
         }
     }

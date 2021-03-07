@@ -14,6 +14,8 @@ namespace MapColourGenerator
         public static int County_Max_Distance = 8;
         public static int Number_Of_Tries = 5000;
 
+        public static bool RecolourBaronies = false;
+
         public static bool UseCustomOutputLocation = false;
         public static string CustomOutputLocation;
 
@@ -26,6 +28,7 @@ namespace MapColourGenerator
         private static readonly string Number_Of_Tries_Key = "Number_Of_Tries";
         private static readonly string UseCustomOutputLocation_Key = "UseCustomOutputLocation";
         private static readonly string CustomOutputLocation_Key = "CustomOutputLocation";
+        private static readonly string RecolourBaronies_Key = "RecolourBaronies";
 
         private static Dictionary<string, string> SettingsDictionary;
 
@@ -64,6 +67,9 @@ namespace MapColourGenerator
 
             string useCustomOutputString = dict.GetValueOrDefault(UseCustomOutputLocation_Key);
             UseCustomOutputLocation = useCustomOutputString == "yes";
+
+            string recolourBaroniesString = dict.GetValueOrDefault(RecolourBaronies_Key);
+            RecolourBaronies = recolourBaroniesString == "yes";
 
             CustomOutputLocation = dict.GetValueOrDefault(CustomOutputLocation_Key);
         }

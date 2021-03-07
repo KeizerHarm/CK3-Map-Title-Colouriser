@@ -3,6 +3,7 @@ using MapColourGenerator.Domain;
 using MapColourGenerator.Files;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -12,7 +13,11 @@ namespace MapColourGenerator
     {
         static void Main(string[] args)
         {
+            var sw = new Stopwatch();
+            sw.Start();
             new Program();
+            sw.Stop();
+            Console.WriteLine($"That took only {sw.ElapsedMilliseconds} milliseconds!");
             Console.WriteLine("Press any key to close the terminal.");
             Console.ReadKey();
         }
@@ -84,7 +89,16 @@ namespace MapColourGenerator
             var neighbourColours = neighbourTitles.Select(x => x.LabColor);
             if (!title.KeepThisColour)
             {
-                var thisColour = ColourStuff.GenerateNextColor(liegeColour, title.Tier.GetMinDistance(), title.Tier.GetMaxDistance(), neighbourColours, title.Name, ref msg);
+                LabColor thisColour;
+                if (title.Tier == Tier.Barony)
+                {
+                    thisColour = ColourStuff.GenerateNextColor_Barony(liegeColour);
+                }
+                else
+                {
+                    thisColour = ColourStuff.GenerateNextColor(liegeColour, title.Tier.GetMinDistance(), title.Tier.GetMaxDistance(), neighbourColours, title.Name, ref msg);
+                }
+
                 title.LabColor = thisColour;
             }
 

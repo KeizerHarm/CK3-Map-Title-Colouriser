@@ -1,4 +1,5 @@
 ﻿using MapColourGenerator.Domain;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,8 +31,8 @@ namespace MapColourGenerator.Files
 
                 if (enumerator.Current.LineNo == currentLineNo)
                 {
-                    lineToWrite = new string('\t', depth);
-                    lineToWrite += enumerator.Current.ColorString;
+                    var precedingWhitespace = originalLine.Split('c', StringSplitOptions.None)[0];
+                    lineToWrite = precedingWhitespace + enumerator.Current.ColorString;
 
                     enumerator.MoveNext();
                 }

@@ -2,6 +2,6 @@
 {
     public enum Tier
     {
-        Empire, Kingdom, Duchy, County
+        Empire, Kingdom, Duchy, County, Barony
     }
 }

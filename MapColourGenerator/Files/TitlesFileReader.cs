@@ -1,5 +1,4 @@
 ﻿using MapColourGenerator.Domain;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,7 +29,8 @@ namespace MapColourGenerator.Files
 
                 titleStack.TryPeek(out Title thisTitle);
 
-                if (TierExtensions.TitlePrefixes.Any(x => line.StartsWith(x)))
+                if (TierExtensions.TitlePrefixes.Any(x => line.StartsWith(x))
+                    || (Settings.RecolourBaronies && line.StartsWith("b_")))
                 {
                     thisTitle = new Title(line.Split(' ').First());
                     noOfTitles++;
