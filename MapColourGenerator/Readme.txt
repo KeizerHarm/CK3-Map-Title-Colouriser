@@ -1,5 +1,7 @@
 ﻿Hello! Here's the Keizer Harm map colouriser tool. Use this to make the de jure title structure of your custom map be coloured into nice gradients rather than random neon colours.
 
+Version 1.1
+
 There's two inputs: the settings file Settings.txt, and the titles file Titles.txt, in which you should paste the titles you wish to recolour.
 
 ### Logic ###

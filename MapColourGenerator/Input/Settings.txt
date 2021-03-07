@@ -15,7 +15,7 @@ Number_Of_Tries = 5000
 # You can determine exactly where the output is being generated; including the 00_landed_titles.txt right in your mod folder. That will make it easier to try this tool a bunch of times and try to hit the right colouration for your map. But if you're only recolouring a specific title rather than the whole file, and/or if you really want to keep a backup, then it's better to just use the standard output location, which is RecolouredTitles.txt in the Output folder.
 
 #Toggle this to yes if you want to use the custom path.
-UseCustomOutputLocation = yes
+UseCustomOutputLocation = no
 
 #This must be the full path all the way from your disk, and it must include the file name at the end, e.g. 00_landed_titles.txt. Escaping spaces or slashes is not necessary.
-CustomOutputLocation = C:\Users\Harm\Documents\Paradox Interactive\Crusader Kings III\mod\BronzeAgeLocal\common\landed_titles\00_landed_titles.txt
+CustomOutputLocation = 
